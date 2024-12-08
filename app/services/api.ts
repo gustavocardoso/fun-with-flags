@@ -9,9 +9,10 @@ const ApiClient = (base_url: string) => ({
 
       const data = await response.json()
       return [data, null]
-    } catch (error: any) {
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred'
       console.error('API request failed: ', error)
-      return [null, error.message]
+      return [null, errorMessage]
     }
   }
 })

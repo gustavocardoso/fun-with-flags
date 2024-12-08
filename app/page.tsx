@@ -58,7 +58,7 @@ export default function Home() {
                 capital={capitalName}
                 region={region}
                 population={population}
-                flag={flags.svg}
+                flag={flag}
                 index={index}
               />
             )
